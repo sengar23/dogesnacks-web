@@ -1,0 +1,214 @@
+@media print {
+  /* Print =================================================== */
+  * {
+    background: transparent !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    filter: none !important;
+    -ms-filter: none !important;
+  }
+
+  @page {
+    margin: 0.5cm;
+  }
+
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+    page-break-after: avoid;
+  }
+
+  p {
+    orphans: 3;
+    widows: 3;
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #808080;
+    page-break-inside: avoid;
+  }
+
+  abbr[title]:after {
+    content: ' (' attr(title) ')';
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]:after {
+    content: ' (' attr(href) ')';
+  }
+
+  a[href^='javascript:']:after,
+  a[href^='#']:after {
+    content: '';
+  }
+
+  img {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+  }
+
+  thead {
+    display: table-header-group;
+  }
+
+  tr {
+    page-break-inside: avoid;
+  }
+}
+
+/* Large screens ----------- */
+@media only screen and (min-width: 1824px) {
+  /* Styles */
+}
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width: 1024px) {
+  /* Styles */
+}
+
+@media only screen and (max-width: 1024px) {
+  /* Styles */
+  .mobile-page {
+    display: block;
+  }
+  .no-mobile-barrier .mobile-page {
+    display: none;
+  }
+  html {
+    font-size: 0.8em;
+  }
+  .body-section {
+    padding: 64px 0 0 0;
+  }
+  .navbar {
+    min-height: 60px;
+  }
+  .navbar-nav {
+    margin-top: 20px;
+  }
+  .navbar-nav .nav-link {
+    padding: 6px 20px;
+    margin-bottom: 10px;
+  }
+  .navbar-toggler {
+    display: none;
+  }
+  .snacks-table .random-color {
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    display: block;
+    margin-bottom: 5px;
+  }
+  .ido-social-wrap a {
+    margin-bottom: 10px;
+  }
+  .token-action-left,
+  .token-action-right {
+    padding: 20px;
+  }
+  .token-action-left {
+    border-right: none;
+    height: auto;
+  }
+  .launch-token-btn,
+  .cancel-token-btn {
+    width: auto;
+  }
+  .claim-token-btn,
+  .refund-token-btn,
+  .collect-fund-btn {
+    margin-bottom: 16px;
+  }
+  body:not(.mobile-metamask) .token-action-wrap,
+  body:not(.mobile-metamask) .token-launch-wrap,
+  body:not(.mobile-metamask) .token-cancel-wrap {
+    display: none !important;
+  }
+  body:not(.mobile-metamask) .token-for-mobile {
+    display: grid;
+  }
+  body.mobile-metamask .mobile-connect-metamask {
+    display: inline-block;
+  }
+
+  .mobile-page h2 {
+    font-size: 2.2rem;
+  }
+  .mobile-page .doge-btn {
+    font-size: 1.6rem;
+    padding: 10px;
+  }
+}
+@media only screen and (max-width: 1000px) {
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  /* Styles */
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1024px) {
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+}
+
+@media only screen and (max-width: 767px) {
+  /* Styles */
+}
+
+@media only screen and (min-width: 568px) and (max-width: 768px) {
+}
+
+@media only screen and (max-width: 568px) {
+  /* Styles */
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  /* Styles */
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width: 321px) {
+  /* Styles */
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width: 320px) {
+  /* Styles */
+}
+
+/* #############################################################################################*/
+
+/* iPhone 4 ----------- */
+@media only screen and (-webkit-min-pixel-ratio: 1.5),
+  only screen and (min-pixel-ratio: 1.5) {
+  /* Styles */
+}
+
+@media only screen and (min-width: 480px) {
+  /* 480 =================================================== */
+}
+
+@media only screen and (min-width: 768px) {
+  /* 768 =================================================== */
+}
+
+@media only screen and (min-width: 992px) {
+  /* 992 =================================================== */
+}
+
+@media only screen and (-webkit-min-pixel-ratio: 1.5),
+  only screen and (min--moz-pixel-ratio: 1.5),
+  only screen and (min-pixel-ratio: 1.5) {
+  /* 2x =================================================== */
+}

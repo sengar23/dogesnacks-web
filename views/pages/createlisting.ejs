@@ -1,0 +1,531 @@
+<!doctype html>
+<html lang="en">
+
+<%- include('../partials/header'); %>
+
+<body>
+    <%- include('../partials/navigation'); %>
+    <main class="main-container">
+        <section class="body-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-10">
+                        <div class="copy-wrap">
+                            <h1>Create an IDO Listing</h1>
+                        </div>
+                        <p class="copy-txt">
+                            Customize the terms of your Initial DEX Offering and prepare for launch. The
+                            DogeSnacks-protocol executes token allocation, liquidity pool creation, liquidity locking,
+                            and direct listing on Uniswap autonomously. Everything ready for public trading.<br><br>
+                            <strong>Please note:</strong>
+                        <ul class="list-dotted">
+                            <li>
+                                <p>Token should have 18 decimals.</p>
+                            </li>
+                            <li>
+                                <p>Token should NOT have liquidity in Uniswap until it is listed by DogeSnacks.</p>
+                            </li>
+                            <li>
+                                <p>Launchpad Fee:
+                                    <span class="font-med">1% of raised ETH or 0.5 ETH, whichever is higher.</span>
+                                </p>
+                            </li>
+                            <li>
+                                <p>Presale factory address:
+                                    <span class="font-med doge-snacks-address"></span>
+                                </p>
+                            </li>
+                        </ul>
+                        <div class="reset-form">Reset Form</div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-10">
+                        <form class="create-list-form" id="create-list-form">
+                            <div class="input-wrap">
+                                <label for="project-name" class="form-label">Project Name *</label>
+                                <input type="text" class="form-control" id="project-name" name="project-name"
+                                    placeholder="Project Name">
+                                <div class="input-error-wrap">
+                                    <p class="input-error">Please provide project name</p>
+                                </div>
+                            </div>
+                            <div class="input-wrap">
+                                <label for="about-project" class="form-label">About Project (<span
+                                        class="txt-char">256</span> characters
+                                    remaining)</label>
+                                <textarea class="form-control" id="about-project" name="about-project" maxlength="256"
+                                    rows="3"
+                                    placeholder="Write something about your project, which will be displayed on your DogeSnacks IDO page."></textarea>
+
+                            </div>
+                            <div class="input-wrap">
+                                <label for="project-banner-img" class="form-label">Project Banner Image(url)</label>
+                                <input type="text" class="form-control" id="project-banner-img"
+                                    name="project-banner-img" placeholder="https://example.com/banner.png">
+                                <div class="input-error-wrap">
+                                    <p class="input-error">Please enter correct banner image url or leave it blank</p>
+                                </div>
+                            </div>
+
+                            <div class="input-break"></div>
+
+                            <div class="input-wrap">
+                                <label for="project-token-address" class="form-label">ERC20 Token Address *</label>
+                                <input type="text" class="form-control" id="project-token-address"
+                                    name="project-token-address" placeholder="ERC20 Token Address">
+                                <div class="input-error-wrap">
+                                    <p class="input-error">Please enter valid ERC20 address</p>
+                                </div>
+                            </div>
+                            <div class="input-wrap">
+                                <label for="unsold-token-address" class="form-label">Address where UNSOLD TOKENS will be
+                                    transferred to*</label>
+                                <input type="text" class="form-control" id="unsold-token-address"
+                                    name="unsold-token-address"
+                                    placeholder="0x000000000000000000000000000000000000dead">
+                                <div class="input-error-wrap">
+                                    <p class="input-error">Please enter valid ERC20 address</p>
+                                </div>
+                            </div>
+
+                            <div class="input-break"></div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="input-wrap">
+                                        <label for="ido-token-price" class="form-label">IDO Token Price (ETH) *</label>
+                                        <input type="text" class="form-control input-float" id="ido-token-price"
+                                            name="ido-token-price" placeholder="Token Price (ETH)">
+                                        <div class="input-error-wrap">
+                                            <p class="input-error">Please enter price</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input-wrap">
+                                        <label for="ido-soft-cap" class="form-label">IDO Soft Cap (ETH) *</label>
+                                        <input type="text" class="form-control input-float" id="ido-soft-cap"
+                                            name="ido-soft-cap" placeholder="Soft Cap (ETH)">
+                                        <div class="input-error-wrap">
+                                            <p class="input-error">Please enter soft cap</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input-wrap">
+                                        <label for="ido-hard-cap" class="form-label">IDO Hard Cap (ETH) *</label>
+                                        <input type="text" class="form-control input-float" id="ido-hard-cap"
+                                            name="ido-hard-cap" placeholder="Hard Cap (ETH)">
+                                        <div class="input-error-wrap">
+                                            <p class="input-error">Please enter hard cap</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input-wrap">
+                                        <label for="max-inv-per" class="form-label">IDO Maximum Investment per Wallet
+                                            (ETH) *</label>
+                                        <input type="text" class="form-control input-float" id="max-inv-per"
+                                            name="max-inv-per" placeholder="Maximum Investment per Wallet (ETH)">
+                                        <div class="input-error-wrap">
+                                            <p class="input-error">Please enter price</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input-wrap">
+                                        <label for="min-inv-per" class="form-label">IDO Minimum Investment per Wallet
+                                            (ETH) *</label>
+                                        <input type="text" class="form-control input-float" id="min-inv-per"
+                                            name="min-inv-per" placeholder="Minimum Investment per Wallet (ETH)">
+                                        <div class="input-error-wrap">
+                                            <p class="input-error">Please enter price</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="input-break"></div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="input-wrap">
+                                        <label for="ido-open-date" class="form-label">IDO Opens At *</label>
+                                        <input type="text" class="form-control" id="ido-open-date" name="ido-open-date"
+                                            placeholder="May 4, 2021 @ 13:43 (UTC+02:00)">
+                                        <div class="input-error-wrap">
+                                            <p class="input-error">Open date cannot be before current date & time</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input-wrap">
+                                        <label for="ido-close-date" class="form-label">IDO Closes At *</label>
+                                        <input type="text" class="form-control" id="ido-close-date"
+                                            name="ido-close-date" placeholder="May 7, 2021 @ 06:33 (UTC+02:00)">
+                                        <div class="input-error-wrap">
+                                            <p class="input-error">Close date cannot be before Open date & time</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+                            <div class="input-break"></div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="input-wrap">
+                                        <label for="uniswap-listing-rate" class="form-label">Uniswap Listing Rate (n ETH
+                                            per 1 Token) *</label>
+                                        <input type="text" class="form-control input-float" id="uniswap-listing-rate"
+                                            name="uniswap-listing-rate"
+                                            placeholder="e.g. Enter 2 if the Uniswap listing rate is 2 ETH per 1 Token">
+                                        <div class="input-error-wrap">
+                                            <p class="input-error"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input-wrap">
+                                        <label for="percentage-allocated" class="form-label">Percentage Allocated to
+                                            Uniswap LP *</label>
+                                        <input type="hidden" class="form-control input-number" id="percentage-allocated"
+                                            name="percentage-allocated" placeholder="Percentage Allocated to Uniswap LP"
+                                            value="1">
+                                        <div class="drag-wrap">
+                                            <div id="rate-drag" class="dragdealer rate-drag-line">
+                                                <div class="rate-txt"><span>0</span>%</div>
+                                                <div class="handle rate-handle">
+                                                    <div class="triangle-up"></div>
+                                                    <div class="triangle-down"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="input-msg">Maximum of <span class="allocated-eth">0.00</span> ETH
+                                            and <span class="allocated-tokens">0.00</span>
+                                            Tokens will be added as liquidity</div>
+                                        <div class="input-error-wrap">
+                                            <p class="input-error"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input-wrap">
+                                        <label for="uniswap-listing-time" class="form-label">Uniswap Listing Time
+                                            *</label>
+                                        <input type="text" class="form-control" id="uniswap-listing-time"
+                                            name="uniswap-listing-time" placeholder="Set the listing time of Uniswap">
+                                        <div class="input-error-wrap">
+                                            <p class="input-error">Uniswap Listing Time cannot be before Close date</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input-wrap">
+                                        <label for="lock-duration" class="form-label">Uniswap LP Tokens Lock Duration
+                                            (Days) *</label>
+                                        <input type="text" class="form-control input-number" id="lock-duration"
+                                            name="lock-duration"
+                                            placeholder="LP Tokens are automatically locked in a created contract">
+                                        <div class="input-error-wrap">
+                                            <p class="input-error"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="input-break"></div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="input-wrap">
+                                        <label for="website-url" class="form-label">Website</label>
+                                        <input type="text" class="form-control" id="website-url" name="website-url"
+                                            placeholder="Website URL">
+                                        <div class="input-error-wrap">
+                                            <p class="input-error">Please enter correct website url or leave it blank
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input-wrap">
+                                        <label for="telegram-url" class="form-label">Telegram</label>
+                                        <input type="text" class="form-control" id="telegram-url" name="telegram-url"
+                                            placeholder="https://t.me/dogesnacks">
+                                        <div class="input-error-wrap">
+                                            <p class="input-error">Please enter correct telegram url or leave it blank
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input-wrap">
+                                        <label for="twitter-url" class="form-label">Twitter</label>
+                                        <input type="text" class="form-control" id="twitter-url" name="twitter-url"
+                                            placeholder="https://twitter.com/dogesnacks">
+                                        <div class="input-error-wrap">
+                                            <p class="input-error">Please enter correct twitter url or leave it blank
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input-wrap">
+                                        <label for="discord-url" class="form-label">Discord</label>
+                                        <input type="text" class="form-control" id="discord-url" name="discord-url"
+                                            placeholder="https://discord.com/invite/eF4d212">
+                                        <div class="input-error-wrap">
+                                            <p class="input-error">Please enter correct discord url or leave it blank
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input-wrap">
+                                        <label for="medium-url" class="form-label">Medium</label>
+                                        <input type="text" class="form-control" id="medium-url" name="medium-url"
+                                            placeholder="https://medium.com/dogesnacks/">
+                                        <div class="input-error-wrap">
+                                            <p class="input-error">Please enter correct medium url or leave it blank</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input-wrap">
+                                        <label for="whitepaper-url" class="form-label">Whitepaper</label>
+                                        <input type="text" class="form-control" id="whitepaper-url"
+                                            name="whitepaper-url" placeholder="https://">
+                                        <div class="input-error-wrap">
+                                            <p class="input-error">Please enter correct whitepaper url or leave it blank
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="input-break"></div>
+
+                            <div class="row">
+                                <div class="col-md-6 col-12">
+                                    <a href="javascript:;"
+                                        class="form-btn connect-wallet doge-btn btn-dark wallet-modal-btn"
+                                        data-bs-toggle="modal" data-bs-target="#wallet-modal">
+                                        Connect Wallet
+                                    </a>
+                                </div>
+                                <div class="col-md-6 col-12">
+                                    <div class="info-box-mini wallet-info-box">
+                                        Wallet:
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-12">
+                                    <a href="javascript:;" class="form-btn doge-btn btn-dark submit-validation">
+                                        Approve
+                                    </a>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+    </main>
+    <!-- Preview Modal -->
+    <div class="modal fade" id="listing-preview-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="listing-preview-modal" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Please review the IDO details</h4>
+
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="preview-heading">Project Name</div>
+                            <div class="preview-value project-name-value">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="preview-heading">About Project</div>
+                            <div class="preview-value about-project-value">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="preview-heading">Project Banner Image(url)</div>
+                            <div class="preview-value project-banner-img-value">
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="preview-heading">ERC20 Token Address</div>
+                            <div class="preview-value project-token-address-value">
+
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="preview-heading">Address where UNSOLD TOKENS will be transferred to</div>
+                            <div class="preview-value unsold-token-address-value">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="preview-heading">IDO Token Price (ETH)</div>
+                            <div class="preview-value ido-token-price-value">
+
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="preview-heading">IDO Soft Cap (ETH)</div>
+                            <div class="preview-value ido-soft-cap-value">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="preview-heading">IDO Hard Cap (ETH)</div>
+                            <div class="preview-value ido-hard-cap-value">
+
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="preview-heading">IDO Maximum Investment per Wallet (ETH)</div>
+                            <div class="preview-value max-inv-per-value">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="preview-heading">IDO Minimum Investment per Wallet (ETH)</div>
+                            <div class="preview-value min-inv-per-value">
+
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="preview-heading">IDO Opens At</div>
+                            <div class="preview-value ido-open-date-value">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="preview-heading">IDO Closes At</div>
+                            <div class="preview-value ido-close-date-value">
+
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="preview-heading">Uniswap Listing Rate (n ETH per 1 Token)</div>
+                            <div class="preview-value uniswap-listing-rate-value">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="preview-heading">Percentage Allocated to Uniswap LP *</div>
+                            <div class="preview-value percentage-allocated-value">
+
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="preview-heading">Uniswap Listing Time</div>
+                            <div class="preview-value uniswap-listing-time-value">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="preview-heading">Uniswap LP Tokens Lock Duration (Days)</div>
+                            <div class="preview-value lock-duration-value">
+
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="preview-heading">Website</div>
+                            <div class="preview-value website-url-value">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="preview-heading">Telegram</div>
+                            <div class="preview-value telegram-url-value">
+
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="preview-heading">Twitter</div>
+                            <div class="preview-value twitter-url-value">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="preview-heading">Discord</div>
+                            <div class="preview-value discord-url-value">
+
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="preview-heading">Medium</div>
+                            <div class="preview-value medium-url-value">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="preview-heading">Whitepaper</div>
+                            <div class="preview-value whitepaper-url-value">
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="doge-btn back-btn" data-bs-dismiss="modal">Go Back</button>
+                    <button type="button" class="doge-btn btn-dark submit-approve">Confirm & Approve</button>
+                    <button type="button" class="doge-btn btn-dark create-presale">Create Presale</button>
+                    <button type="button" class="doge-btn awaiting-btn">Please wait...Awaiting for confirmation from the
+                        network</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include('../partials/wallet'); %>
+    <%- include('../partials/footertext'); %>
+    <%- include('../partials/ido'); %>
+    <%- include('../partials/footer'); %>
+
+    <script type="module" src="js/createlisting.js"></script>
+</body>
+
+</html>

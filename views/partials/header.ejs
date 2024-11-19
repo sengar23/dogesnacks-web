@@ -1,0 +1,82 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title><%= title %></title>
+
+  <link rel="canonical" href="https://dogesnacks.org/<%= canonical %>" />
+  <meta name="description" content="<%= description %>">
+  <meta property="og:image" content="https://dogesnacks.org/img/ido-banner.png" />
+  <meta property="og:title" content="<%= title %>" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://dogesnacks.org" />
+  <meta property="og:description" content="<%= description %>">
+
+  <meta name="robots" content="all">
+
+
+  <!-- BEGIN: Favicons-->
+  <link rel="apple-touch-icon" sizes="57x57" href="icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+  <link rel="manifest" href="icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="theme-color" content="#fafafa">
+  <!-- END: Favicons-->
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=VT323&display=swap"
+    rel="stylesheet">
+
+  <!-- BEGIN: Vendor CSS-->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/apexcharts.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <!-- END: Vendor CSS-->
+
+  <!-- BEGIN: Custom CSS-->
+  <link rel="stylesheet" href="css/main.css?1">
+  <link rel="stylesheet" href="css/responsive.css?1">
+  <!-- END: Custom CSS-->
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VSK8P4F3J5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-VSK8P4F3J5');
+  </script>
+  <script src="https://browser.sentry-cdn.com/6.8.0/bundle.min.js"
+    integrity="sha384-a1zd+NHj/GIqnlXIHuEKFontqYxBdK9Zwslrvnhr1KfU9tBDzKbM55gQFXlHYDiD"
+    crossorigin="anonymous"></script>
+  <script src="https://browser.sentry-cdn.com/6.8.0/captureconsole.min.js"
+    integrity="sha384-FJ5n80A08NroQF9DJzikUUhiCaQT2rTIYeJyHytczDDbIiejfcCzBR5lQK4AnmVt" crossorigin="anonymous">
+    </script>
+  <script>
+
+    Sentry.init({
+      dsn: "https://037c7d7a52c54abda8ea7802b5eb0334@o912645.ingest.sentry.io/5849867",
+      integrations: [new Sentry.Integrations.CaptureConsole(
+        {
+          levels: ['log', 'info', 'error', 'debug']
+        }
+      )],
+    });
+  </script>
+
+</head>

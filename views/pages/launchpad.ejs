@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+
+<%- include('../partials/header'); %>
+
+<body>
+    <%- include('../partials/navigation'); %>
+    <main class="main-container">
+        <section class="body-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-10 col-12">
+                        <div class="copy-wrap">
+                            <h1>IDO Pools</h1>
+                        </div>
+                        <p class="copy-txt">
+                            DogeSnacks is a decentralized and permissionless crowdfunding platform that enables emerging
+                            DeFI projects the ability to distribute tokens, raise liquidity, and promise safety to
+                            investors. Once an IDO has successfully reached launch status, the DogeSnacks protocol
+                            executes token allocation, liquidity pool creation, and everything ready for public trading
+                            on Uniswap.<br /><br />
+                        </p>
+                        <p class="copy-txt">
+                            Instructions on how to participate in the IDO are <a
+                                href="instructions-on-how-to-buy-tokens.pdf" target="_blank">here</a>.
+                        </p>
+                        <div class="table-wrap">
+                            <table class="table snacks-table ido-list-table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Project</th>
+                                        <th scope="col">Ratio</th>
+                                        <th scope="col">Progress</th>
+                                        <th scope="col">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                  <tr data-dogeid="0" data-presaleaddress="0xe7Ba6D1Fbbdc1385fF24B21F48579100a2B2606f" data-idoname="dogesnacks">
+                                    <td><span class="random-color" style="background-color: #E88038"></span><span>DogeSnacks</span></td>
+                                    <td>1 ETH = 555555.5556 Tokens</td>
+                                    <td>0.00 / 420 Hard Cap</td>
+                                    <td>Awaiting IDO (4/20 2022)</td>
+                                  </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+
+    </main>
+
+    <%- include('../partials/wallet'); %>
+    <%- include('../partials/footertext'); %>
+    <%- include('../partials/ido'); %>
+    <%- include('../partials/footer'); %>
+    <script src="js/launchpad.js"></script>
+</body>
+
+</html>
